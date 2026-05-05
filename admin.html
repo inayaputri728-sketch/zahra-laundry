@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Admin Zahra Laundry</title>
+<style>
+:root{--blue:#174ea6;--cyan:#0ea5e9;--navy:#0f2357;--red:#b91c1c;--yellow:#fde047;--text:#172554;--muted:#64748b;--green:#16a34a;--danger:#ef4444}
+*{box-sizing:border-box;scroll-behavior:smooth}
+body{margin:0;font-family:Arial,Helvetica,sans-serif;color:var(--text);background:radial-gradient(circle at 15% 10%,rgba(14,165,233,.25),transparent 30%),radial-gradient(circle at 85% 0%,rgba(253,224,71,.28),transparent 25%),linear-gradient(180deg,#dbeafe,#fff 45%,#e0f2fe);overflow-x:hidden}
+.topbar{background:linear-gradient(90deg,var(--navy),var(--blue),var(--cyan));color:white;text-align:center;padding:10px 16px;font-weight:800}
+nav{position:sticky;top:0;z-index:10;background:rgba(255,255,255,.88);backdrop-filter:blur(14px);border-bottom:1px solid #bfdbfe}
+.nav{max-width:1180px;margin:auto;padding:15px 22px;display:flex;justify-content:space-between;align-items:center;gap:18px}
+.brand{font-size:24px;font-weight:900;color:var(--navy);display:flex;align-items:center;gap:12px}
+.logo{width:50px;height:50px;border-radius:18px;background:linear-gradient(135deg,var(--blue),var(--cyan));display:grid;place-items:center;color:white;font-size:26px;box-shadow:0 12px 25px rgba(23,78,166,.3)}
+.brand span{color:var(--red);font-family:Georgia,serif;font-size:30px}
+.links{display:flex;gap:18px;font-weight:800;font-size:14px}
+.links a{text-decoration:none;color:var(--text)}
+.links a:hover{color:var(--cyan)}
+.container{max-width:1180px;margin:auto;padding:0 22px}
+.hero{display:grid;grid-template-columns:1.05fr .95fr;gap:38px;align-items:center;padding:62px 0 46px}
+.badge{display:inline-flex;background:rgba(255,255,255,.82);border:1px solid #bfdbfe;padding:10px 14px;border-radius:999px;color:var(--blue);font-weight:900;box-shadow:0 10px 24px rgba(23,78,166,.08)}
+h1{font-size:clamp(44px,7vw,78px);line-height:.93;letter-spacing:-3px;margin:18px 0;color:var(--navy)}
+.red{color:var(--red);font-family:Georgia,serif;text-shadow:2px 2px 0 rgba(253,224,71,.55)}
+.hero p,.section-title p{color:var(--muted);line-height:1.75;font-size:18px}
+.actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:26px}
+.btn{border:0;border-radius:17px;padding:14px 20px;font-weight:900;cursor:pointer;text-decoration:none;display:inline-flex;align-items:center;justify-content:center;gap:8px}
+.btn-primary{color:white;background:linear-gradient(135deg,var(--blue),var(--cyan));box-shadow:0 16px 30px rgba(23,78,166,.28)}
+.btn-wa{color:white;background:linear-gradient(135deg,#16a34a,#22c55e);box-shadow:0 16px 30px rgba(22,163,74,.25)}
+.btn-soft{background:white;color:var(--blue);border:1px solid #bfdbfe}
+.hero-card{min-height:500px;position:relative;overflow:hidden;border-radius:36px;background:linear-gradient(135deg,rgba(23,78,166,.95),rgba(14,165,233,.82));box-shadow:0 25px 60px rgba(15,35,87,.2);border:8px solid rgba(255,255,255,.78)}
+.hero-card:before{content:"";position:absolute;inset:0;background:repeating-linear-gradient(0deg,transparent,transparent 10px,rgba(255,255,255,.14) 11px)}
+.cloud{position:absolute;background:rgba(255,255,255,.86);border-radius:999px}
+.c1{width:210px;height:58px;left:-28px;bottom:50px}.c2{width:170px;height:54px;right:-25px;top:108px}.c3{width:155px;height:46px;left:95px;top:56px}
+.washer{position:absolute;right:54px;top:82px;width:245px;height:315px;border-radius:28px;background:linear-gradient(180deg,#fff,#dbeafe);box-shadow:0 24px 45px rgba(0,0,0,.28);transform:rotate(6deg);border:3px solid #e2e8f0}
+.washer:before{content:"";position:absolute;width:145px;height:145px;border-radius:50%;left:50%;top:98px;transform:translateX(-50%);background:radial-gradient(circle at 35% 35%,#fff,transparent 16%),radial-gradient(circle,#7dd3fc,#2563eb 65%,#111827 66%);border:12px solid white;animation:spin 4.5s linear infinite}
+.washer:after{content:"😊";position:absolute;left:96px;top:142px;font-size:44px;z-index:2}
+@keyframes spin{to{transform:translateX(-50%) rotate(360deg)}}
+.star{position:absolute;left:42px;bottom:92px;width:190px;min-height:138px;background:var(--yellow);color:#7c2d12;font-weight:900;display:grid;place-items:center;text-align:center;padding:18px;clip-path:polygon(50% 0%,60% 25%,85% 12%,76% 39%,100% 50%,75% 61%,86% 88%,60% 75%,50% 100%,40% 75%,14% 88%,25% 61%,0 50%,24% 39%,15% 12%,40% 25%);transform:rotate(-8deg);filter:drop-shadow(0 16px 22px rgba(0,0,0,.24))}
+.smart{position:absolute;left:38px;top:72px;width:235px;padding:20px;border-radius:26px;background:rgba(255,255,255,.88);backdrop-filter:blur(16px);box-shadow:0 18px 36px rgba(0,0,0,.16)}
+.smart strong{display:block;font-size:28px;color:var(--blue)}
+.section{padding:42px 0}.section-title{text-align:center;margin-bottom:26px}.section-title h2{margin:0;font-size:clamp(30px,5vw,46px);letter-spacing:-1px;color:var(--navy)}
+.cards{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}.card{background:rgba(255,255,255,.88);backdrop-filter:blur(16px);border:1px solid rgba(255,255,255,.9);border-radius:28px;padding:22px;box-shadow:0 18px 38px rgba(15,35,87,.09)}
+.service{transition:.2s}.service:hover{transform:translateY(-6px);box-shadow:0 24px 60px rgba(15,35,87,.16)}
+.service h3{margin:0 0 8px;font-size:20px}.service p{color:var(--muted);line-height:1.5;margin:0 0 12px}.price{display:inline-block;padding:9px 12px;border-radius:999px;background:linear-gradient(135deg,var(--blue),var(--cyan));color:white;font-weight:900}
+.app{display:grid;grid-template-columns:.95fr 1.05fr;gap:18px;align-items:start}
+label{display:block;margin:14px 0 7px;font-weight:900;color:#1e3a8a;font-size:14px}
+input,select{width:100%;padding:14px 15px;border-radius:16px;border:1px solid #bfdbfe;outline:none;background:white;font-size:15px}
+input:focus,select:focus{border-color:var(--cyan);box-shadow:0 0 0 4px rgba(14,165,233,.14)}
+.preview,.stats{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;margin-top:16px}.stats{grid-template-columns:repeat(3,1fr);margin:0 0 16px}
+.preview div,.stat{background:linear-gradient(135deg,#eff6ff,#fff);border:1px solid #dbeafe;border-radius:20px;padding:16px}.preview small,.stat small{display:block;color:var(--muted);font-weight:900}.preview strong,.stat strong{display:block;margin-top:5px;font-size:24px;color:var(--blue)}
+.note{margin-top:16px;padding:16px;border-radius:22px;background:linear-gradient(135deg,#fef3c7,#fff7ed);border:1px solid #fde68a;color:#7c2d12;font-weight:800;line-height:1.6}
+.orders{display:grid;gap:12px;max-height:540px;overflow:auto;padding-right:3px}.order{display:grid;grid-template-columns:1fr auto;gap:12px;padding:16px;border-radius:22px;background:white;border:1px solid #dbeafe}
+.order h3{margin:8px 0;font-size:20px}.order p{margin:4px 0;color:var(--muted);font-size:14px}.status{display:inline-flex;width:max-content;padding:6px 10px;border-radius:999px;background:#fef3c7;color:#92400e;font-size:12px;font-weight:900}.status.done{background:#dcfce7;color:#166534}
+.order-actions{display:flex;flex-direction:column;gap:8px}.small{border:0;border-radius:13px;padding:10px 12px;color:white;font-weight:900;cursor:pointer;white-space:nowrap}.done-btn{background:var(--green)}.delete-btn{background:var(--danger)}
+.empty{text-align:center;padding:28px;border-radius:22px;color:var(--muted);background:#f8fafc;border:1px dashed #93c5fd}
+.tables{display:grid;grid-template-columns:1fr 1fr;gap:18px}.price-table{width:100%;border-collapse:collapse;border-radius:22px;overflow:hidden;background:white;box-shadow:0 18px 38px rgba(15,35,87,.08)}.price-table th{background:linear-gradient(90deg,var(--blue),var(--cyan));color:white;text-align:left;padding:14px}.price-table td{padding:13px 14px;border-bottom:1px solid #dbeafe;font-weight:700}.price-table tr:last-child td{border-bottom:0}
+.contact{text-align:center;padding:48px 22px;border-radius:34px;background:linear-gradient(135deg,var(--navy),var(--blue),var(--cyan));color:white;box-shadow:0 25px 60px rgba(15,35,87,.2)}.contact h2{margin:0;font-size:clamp(30px,5vw,48px)}.contact p{opacity:.92;line-height:1.8}
+footer{text-align:center;padding:34px 22px;color:var(--muted);font-weight:700}
+.receipt-print{display:none}
+@media print{body *{visibility:hidden!important}.receipt-print,.receipt-print *{visibility:visible!important}.receipt-print{display:block!important;position:absolute;left:0;top:0;width:100%;padding:24px;color:#111827;font-family:Arial,Helvetica,sans-serif}.receipt-box{max-width:420px;margin:auto;border:2px dashed #174ea6;border-radius:18px;padding:22px}.receipt-box h2{text-align:center;margin:0 0 6px;color:#174ea6}.receipt-box .center{text-align:center;color:#64748b;font-size:13px;margin-bottom:18px}.receipt-row{display:flex;justify-content:space-between;gap:14px;border-bottom:1px solid #e5e7eb;padding:8px 0;font-size:14px}.receipt-total{font-size:20px;font-weight:900;color:#b91c1c}.receipt-note{margin-top:18px;text-align:center;font-size:13px;color:#64748b}}
+@media(max-width:950px){.hero,.app,.tables{grid-template-columns:1fr}.cards{grid-template-columns:repeat(2,1fr)}.links{display:none}.hero-card{min-height:460px}}
+@media(max-width:600px){.cards,.stats,.preview{grid-template-columns:1fr}.order{grid-template-columns:1fr}.order-actions{flex-direction:row;flex-wrap:wrap}.washer{right:18px;transform:rotate(6deg) scale(.78);transform-origin:top right}.smart{left:18px;width:205px}.star{left:18px;transform:rotate(-8deg) scale(.82);transform-origin:left bottom}}
+
+.admin-login{max-width:480px;margin:42px auto}
+.admin-tools{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-bottom:16px}
+.admin-list{display:grid;gap:12px}.admin-item{background:white;border:1px solid #dbeafe;border-radius:22px;padding:16px;display:grid;grid-template-columns:1fr auto;gap:14px}.admin-item h3{margin:0 0 8px}.admin-item p{margin:4px 0;color:#64748b;font-size:14px}
+.admin-badges{display:flex;gap:8px;flex-wrap:wrap;margin:8px 0}.admin-badge{display:inline-flex;padding:6px 10px;border-radius:999px;font-size:12px;font-weight:900;background:#e0f2fe;color:#075985}.admin-badge.paid{background:#dcfce7;color:#166534}.admin-badge.unpaid{background:#fef3c7;color:#92400e}.admin-badge.delivery{background:#ede9fe;color:#5b21b6}
+.admin-actions{display:flex;flex-direction:column;gap:8px}.admin-hidden{display:none!important}
+@media(max-width:850px){.admin-tools{grid-template-columns:1fr}.admin-item{grid-template-columns:1fr}.admin-actions{flex-direction:row;flex-wrap:wrap}}
+</style>
+</head>
+<body>
+<div class="topbar">Panel Admin Zahra Laundry • WhatsApp 085182497721</div>
+<nav><div class="nav"><div class="brand"><div class="logo">🔐</div>ADMIN <span>Zahra</span></div><div class="links"><a href="index.html">Website Customer</a></div></div></nav>
+
+<main class="container">
+<section class="section">
+<div class="section-title"><h2>Panel Khusus Admin</h2><p>Admin bisa melihat semua pesanan customer, cek pembayaran, dan update status pengantaran.</p></div>
+
+<div class="card admin-login" id="adminLogin">
+<h2>Login Admin</h2><p style="color:#64748b;line-height:1.6">Masukkan password admin untuk membuka daftar pesanan.</p>
+<label>Password Admin</label><input id="adminPassword" type="password" placeholder="Masukkan password">
+<button class="btn btn-primary" style="width:100%;margin-top:14px" onclick="adminLogin()">Masuk Admin</button>
+<div class="note">Password demo: <b>admin123</b></div>
+</div>
+
+<div class="card admin-hidden" id="adminPanel">
+<div style="display:flex;justify-content:space-between;gap:12px;align-items:center;flex-wrap:wrap;margin-bottom:16px"><h2 style="margin:0">Daftar Pesanan Customer</h2><button class="btn btn-soft" onclick="adminLogout()">Keluar Admin</button></div>
+
+<div class="admin-tools">
+<input id="adminSearch" placeholder="Cari nama customer..." oninput="renderAdmin()">
+<select id="filterPayment" onchange="renderAdmin()"><option value="all">Semua pembayaran</option><option value="paid">Sudah lunas</option><option value="unpaid">Belum lunas</option></select>
+<select id="filterDelivery" onchange="renderAdmin()"><option value="all">Semua pengantaran</option><option value="Belum diantar">Belum diantar</option><option value="Dalam proses pengantaran">Dalam proses pengantaran</option><option value="Sudah diantar">Sudah diantar</option></select>
+<select id="filterOrderStatus" onchange="renderAdmin()"><option value="all">Semua status barang</option><option value="Diproses">Diproses</option><option value="Selesai">Selesai</option></select>
+</div>
+
+<div class="stats" style="margin-bottom:16px"><div class="stat"><small>Belum Lunas</small><strong id="adminUnpaid">0</strong></div><div class="stat"><small>Sudah Lunas</small><strong id="adminPaid">0</strong></div><div class="stat"><small>Dalam Pengantaran</small><strong id="adminDelivering">0</strong></div></div>
+<div class="admin-list" id="adminOrders"></div>
+</div>
+</section>
+</main><div id="receiptPrint" class="receipt-print"></div><footer>© 2026 Zahra Laundry Smart • Panel admin</footer>
+
+<script>
+const STORAGE_KEY="zahraLaundryOrders";
+let orders=JSON.parse(localStorage.getItem(STORAGE_KEY))||[];
+const prices={cuci_kilat:20000,cuci_express:14000,cuci_reguler:7000,setrika:5000,setrika_express:10000,cuci_lipat:5000};
+const names={cuci_kilat:"Cuci Kilat",cuci_express:"Cuci Express",cuci_reguler:"Cuci Reguler",setrika:"Setrika",setrika_express:"Setrika Express",cuci_lipat:"Cuci Lipat"};
+function estimate(w,s){if(!w||w<=0)return"0 jam";if(s==="cuci_kilat")return"3 - 6 jam";if(s==="cuci_express")return"1 hari";if(s==="cuci_reguler")return"2 hari";if(s==="setrika_express")return"1 hari";return Math.ceil(w*2)+" jam"}
+function rupiah(n){return"Rp"+Number(n).toLocaleString("id-ID")}
+function escapeHTML(t){return String(t||"").replace(/[&<>"']/g,m=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#039;"}[m]))}
+function save(){localStorage.setItem(STORAGE_KEY,JSON.stringify(orders));}
+function chatWhatsApp(id){
+  const o=orders.find(item=>item.id===id); if(!o)return;
+  const message="Halo Zahra Laundry, saya ingin konfirmasi order:%0A"+
+  "Nama: "+encodeURIComponent(o.name)+"%0A"+
+  "Layanan: "+encodeURIComponent(names[o.service])+"%0A"+
+  "Berat: "+o.weight+" Kg%0A"+
+  "Estimasi: "+encodeURIComponent(o.estimate)+"%0A"+
+  "Total: "+encodeURIComponent(rupiah(o.total))+"%0A"+
+  "Pembayaran: "+encodeURIComponent(o.payment==="pay_now"?"Bayar sekarang via e-banking/e-wallet":"Bayar nanti setelah barang selesai")+"%0A"+
+  "Status pengantaran: "+encodeURIComponent(o.deliveryStatus||"Belum diantar");
+  window.open("https://wa.me/6285182497721?text="+message,"_blank");
+}
+function printReceipt(id){
+  const o=orders.find(item=>item.id===id); if(!o)return;
+  const receipt=document.getElementById("receiptPrint");
+  receipt.innerHTML=`<div class="receipt-box">
+  <h2>Zahra Laundry</h2>
+  <div class="center">Nota Pembelian Laundry<br>WhatsApp: 085182497721</div>
+  <div class="receipt-row"><span>No. Nota</span><b>${o.id}</b></div>
+  <div class="receipt-row"><span>Tanggal</span><b>${o.date}</b></div>
+  <div class="receipt-row"><span>Nama</span><b>${escapeHTML(o.name)}</b></div>
+  <div class="receipt-row"><span>Layanan</span><b>${names[o.service]}</b></div>
+  <div class="receipt-row"><span>Berat</span><b>${o.weight} Kg</b></div>
+  <div class="receipt-row"><span>Estimasi</span><b>${o.estimate}</b></div>
+  <div class="receipt-row"><span>Antar Jemput</span><b>${o.pickup?"Gratis":"Belum gratis"}</b></div>
+  <div class="receipt-row"><span>Pembayaran</span><b>${o.payment==="pay_now"?"E-banking / E-wallet":"Bayar setelah selesai"}</b></div>
+  <div class="receipt-row"><span>Status Bayar</span><b>${o.paymentStatus||"-"}</b></div>
+  <div class="receipt-row"><span>Pengantaran</span><b>${o.deliveryStatus||"Belum diantar"}</b></div>
+  <div class="receipt-row receipt-total"><span>Total</span><span>${rupiah(o.total)}</span></div>
+  <div class="receipt-note">Terima kasih sudah menggunakan layanan Zahra Laundry.<br>Simpan nota ini sebagai bukti transaksi.</div>
+  </div>`;
+  window.print();
+}
+
+let adminIsLogin=localStorage.getItem("zahraAdminLogin")==="yes";
+function adminLogin(){const pass=document.getElementById("adminPassword").value;if(pass!=="admin123"){alert("Password admin salah.");return}adminIsLogin=true;localStorage.setItem("zahraAdminLogin","yes");renderAdminAccess()}
+function adminLogout(){adminIsLogin=false;localStorage.removeItem("zahraAdminLogin");renderAdminAccess()}
+function renderAdminAccess(){const login=document.getElementById("adminLogin");const panel=document.getElementById("adminPanel");if(adminIsLogin){login.classList.add("admin-hidden");panel.classList.remove("admin-hidden");renderAdmin()}else{login.classList.remove("admin-hidden");panel.classList.add("admin-hidden")}}
+function setPaymentStatus(id,status){orders=orders.map(o=>o.id===id?{...o,paymentStatus:status}:o);save();renderAdmin()}
+function setDeliveryStatus(id,status){orders=orders.map(o=>o.id===id?{...o,deliveryStatus:status}:o);save();renderAdmin()}
+function setOrderStatus(id,status){orders=orders.map(o=>o.id===id?{...o,status:status}:o);save();renderAdmin()}
+function deleteOrder(id){if(!confirm("Yakin ingin menghapus order ini?"))return;orders=orders.filter(o=>o.id!==id);save();renderAdmin()}
+function renderAdmin(){if(!adminIsLogin)return;orders=JSON.parse(localStorage.getItem(STORAGE_KEY))||[];const list=document.getElementById("adminOrders");const search=(document.getElementById("adminSearch").value||"").toLowerCase();const payFilter=document.getElementById("filterPayment").value;const deliveryFilter=document.getElementById("filterDelivery").value;const orderFilter=document.getElementById("filterOrderStatus").value;document.getElementById("adminUnpaid").textContent=orders.filter(o=>(o.paymentStatus||"")!=="Lunas").length;document.getElementById("adminPaid").textContent=orders.filter(o=>(o.paymentStatus||"")==="Lunas").length;document.getElementById("adminDelivering").textContent=orders.filter(o=>(o.deliveryStatus||"Belum diantar")==="Dalam proses pengantaran").length;let data=orders.filter(o=>{const matchSearch=(o.name||"").toLowerCase().includes(search);const isPaid=(o.paymentStatus||"")==="Lunas";const matchPay=payFilter==="all"||(payFilter==="paid"&&isPaid)||(payFilter==="unpaid"&&!isPaid);const matchDelivery=deliveryFilter==="all"||(o.deliveryStatus||"Belum diantar")===deliveryFilter;const matchOrder=orderFilter==="all"||o.status===orderFilter;return matchSearch&&matchPay&&matchDelivery&&matchOrder});if(data.length===0){list.innerHTML='<div class="empty">Tidak ada pesanan sesuai filter.</div>';return}list.innerHTML=data.map(o=>`<div class="admin-item"><div><h3>${escapeHTML(o.name)}</h3><div class="admin-badges"><span class="admin-badge">${o.status}</span><span class="admin-badge ${(o.paymentStatus||"")==="Lunas"?"paid":"unpaid"}">${o.paymentStatus||"Belum lunas"}</span><span class="admin-badge delivery">${o.deliveryStatus||"Belum diantar"}</span></div><p><b>Layanan:</b> ${names[o.service]}</p><p><b>Berat:</b> ${o.weight} Kg • <b>Total:</b> ${rupiah(o.total)}</p><p><b>Pembayaran:</b> ${o.payment==="pay_now"?"E-banking / E-wallet":"Bayar setelah selesai"}</p><p><b>Antar Jemput:</b> ${o.pickup?"Gratis":"Belum gratis"} • <b>Tanggal:</b> ${o.date}</p></div><div class="admin-actions"><button class="small done-btn" onclick="setPaymentStatus(${o.id},'Lunas')">Sudah Lunas</button><button class="small" style="background:#f59e0b" onclick="setPaymentStatus(${o.id},'Belum lunas')">Belum Lunas</button><button class="small" style="background:#174ea6" onclick="setOrderStatus(${o.id},'Selesai')">Barang Selesai</button><button class="small" style="background:#64748b" onclick="setOrderStatus(${o.id},'Diproses')">Barang Diproses</button><button class="small" style="background:#7c3aed" onclick="setDeliveryStatus(${o.id},'Dalam proses pengantaran')">Proses Antar</button><button class="small" style="background:#16a34a" onclick="setDeliveryStatus(${o.id},'Sudah diantar')">Sudah Diantar</button><button class="small" style="background:#0ea5e9" onclick="chatWhatsApp(${o.id})">Chat Customer</button><button class="small" style="background:#0f2357" onclick="printReceipt(${o.id})">Cetak Nota</button><button class="small delete-btn" onclick="deleteOrder(${o.id})">Hapus</button></div></div>`).join("")}
+renderAdminAccess();
+</script>
+</body>
+</html>
